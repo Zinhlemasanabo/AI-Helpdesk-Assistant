@@ -1,0 +1,455 @@
+﻿/* ========================================
+   RESOLVEAI
+   Corporate IT Helpdesk Dashboard
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #071a33;
+    --navy-light: #102b4e;
+    --blue: #1769e0;
+    --blue-hover: #0f56bd;
+    --background: #f4f6f9;
+    --white: #ffffff;
+    --text: #172033;
+    --text-light: #697386;
+    --border: #e1e6ed;
+    --success: #17864b;
+    --warning: #d78b16;
+    --danger: #c83c3c;
+    --sidebar-width: 255px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.robot-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.brand h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.brand span {
+    display: block;
+    margin-top: 2px;
+    color: #aebbd0;
+    font-size: 12px;
+}
+
+
+/* NAVIGATION */
+
+.sidebar nav {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .sidebar nav a {
+        display: block;
+        padding: 13px 15px;
+        border-radius: 7px;
+        color: #cbd5e3;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.2s ease;
+    }
+
+        .sidebar nav a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        .sidebar nav a.active {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    padding: 0 42px 50px;
+}
+
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.topbar {
+    min-height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 34px;
+}
+
+    .topbar h1 {
+        font-size: 26px;
+        font-weight: 650;
+        margin-bottom: 7px;
+        letter-spacing: -0.5px;
+    }
+
+    .topbar p {
+        color: var(--text-light);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+/* PROFILE */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.profile span {
+    display: block;
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.problem-card,
+.result-card {
+    max-width: 1050px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.02), 0 8px 24px rgba(15, 23, 42, 0.035);
+}
+
+
+/* ========================================
+   SECTION HEADINGS
+======================================== */
+
+.section-heading,
+.result-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+    .section-heading h2,
+    .result-heading h2 {
+        font-size: 18px;
+        font-weight: 650;
+        margin-bottom: 5px;
+    }
+
+    .section-heading p,
+    .result-heading p {
+        color: var(--text-light);
+        font-size: 13px;
+    }
+
+
+/* ========================================
+   PROBLEM TEXTAREA
+======================================== */
+
+textarea {
+    width: 100%;
+    min-height: 170px;
+    resize: vertical;
+    padding: 17px;
+    border: 1px solid #cfd6df;
+    border-radius: 7px;
+    outline: none;
+    color: var(--text);
+    background: #fbfcfd;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: 0.2s ease;
+}
+
+    textarea::placeholder {
+        color: #9aa5b5;
+    }
+
+    textarea:focus {
+        border-color: var(--blue);
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+    }
+
+
+/* ========================================
+   EXAMPLE BUTTONS
+======================================== */
+
+.examples {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+    .examples span {
+        color: var(--text-light);
+        font-size: 12px;
+        margin-right: 3px;
+    }
+
+    .examples button {
+        border: 1px solid #d8dee7;
+        background: #f8fafc;
+        color: #48566a;
+        padding: 7px 11px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 11px;
+        transition: 0.2s ease;
+    }
+
+        .examples button:hover {
+            border-color: #b8c4d3;
+            background: #eef3f8;
+            color: var(--navy);
+        }
+
+
+/* ========================================
+   ANALYSE BUTTON
+======================================== */
+
+.button-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
+#analyseButton {
+    border: none;
+    background: var(--blue);
+    color: var(--white);
+    padding: 12px 21px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(23, 105, 224, 0.18);
+}
+
+    #analyseButton:hover {
+        background: var(--blue-hover);
+        transform: translateY(-1px);
+    }
+
+    #analyseButton:active {
+        transform: translateY(0);
+    }
+
+
+/* ========================================
+   RESULTS
+======================================== */
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.result-item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 17px;
+}
+
+    .result-item span {
+        display: block;
+        color: var(--text-light);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        margin-bottom: 8px;
+    }
+
+    .result-item h3 {
+        color: var(--navy);
+        font-size: 15px;
+        font-weight: 650;
+    }
+
+
+    /* SOLUTION */
+
+    .result-item.solution {
+        grid-column: 1 / -1;
+        background: var(--white);
+        border-left: 3px solid var(--blue);
+    }
+
+        .result-item.solution p {
+            color: #4c586b;
+            font-size: 13px;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 18px;
+    }
+
+        .sidebar nav {
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+            .sidebar nav a {
+                padding: 9px 12px;
+            }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0 20px 35px;
+    }
+
+    .topbar {
+        min-height: auto;
+        padding: 25px 0;
+        align-items: flex-start;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .result-item.solution {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .topbar {
+        flex-direction: column;
+    }
+
+    .problem-card,
+    .result-card {
+        padding: 20px;
+    }
+
+    .examples {
+        align-items: flex-start;
+    }
+
+    .button-area {
+        justify-content: stretch;
+    }
+
+    #analyseButton {
+        width: 100%;
+    }
+}

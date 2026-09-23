@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResolveAI | IT Support Made Simple</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="robot-logo">🤖</div>
+
+            <div>
+                <h2>ResolveAI</h2>
+                <span>IT Support</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">New Request</a>
+            <a href="#">My Requests</a>
+            <a href="#">Knowledge Base</a>
+            <a href="#">Support Resources</a>
+            <a href="#">Settings</a>
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <div>
+                <h1>Good morning 👋</h1>
+                <p>
+                    Describe your IT issue and ResolveAI will
+                    analyse it and suggest a solution.
+                </p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">ZM</div>
+
+                <div>
+                    <strong>Zizinhle Masanabo</strong>
+                    <span>Developer</span>
+                </div>
+            </div>
+
+        </header>
+
+
+
+        <section class="problem-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Submit an IT Problem</h2>
+                    <p>
+                        Provide as much detail as possible
+                        for the best results.
+                    </p>
+                </div>
+            </div>
+
+            <textarea id="problemInput"
+                      placeholder="Describe your IT problem..."
+                      maxlength="500"></textarea>
+
+            <div class="examples">
+                <span>Try an example:</span>
+
+                <button type="button">Can't connect to Wi-Fi</button>
+                <button type="button">Printer not working</button>
+                <button type="button">Forgot password</button>
+                <button type="button">Slow computer</button>
+            </div>
+
+            <div class="button-area">
+                <button id="analyseButton" type="button">
+                    ✦ Analyse Problem
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section class="result-card">
+
+            <div class="result-heading">
+                <div>
+                    <h2>AI Analysis Result</h2>
+                    <p>ResolveAI's assessment of your issue.</p>
+                </div>
+            </div>
+
+            <div class="results">
+
+                <div class="result-item">
+                    <span>Category</span>
+                    <h3 id="categoryResult">—</h3>
+                </div>
+
+                <div class="result-item">
+                    <span>Priority</span>
+                    <h3 id="priorityResult">—</h3>
+                </div>
+
+                <div class="result-item solution">
+                    <span>Suggested Solution</span>
+
+                    <p id="solutionResult">
+                        Submit an IT problem to receive
+                        an AI-generated solution.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
