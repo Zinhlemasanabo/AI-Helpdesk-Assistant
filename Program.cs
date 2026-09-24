@@ -1,4 +1,9 @@
+
+using AIHelpdeskAssistant.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=resolveai.db"));
 builder.Services.AddHttpClient<AIHelpdeskAssistant.Services.GeminiService>();
 
 // Add services to the container.
